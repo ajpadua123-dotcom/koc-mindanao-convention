@@ -428,11 +428,49 @@ Mobile Number:
       });
     });
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      formMessage.textContent =
-        "Preview only: your information has NOT been sent or saved. Secure registration and receipt upload will be connected in a later step.";
-      formMessage.className = "mt-4 text-sm leading-6 text-amber-800";
+    
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const formMessage = document.getElementById("formMessage");
+
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  // File uploads are not supported by this endpoint yet.
+  delete data.proofOfPayment;
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting...";
+  formMessage.textContent = "Sending your registration...";
+  formMessage.className = "mt-4 text-sm leading-6 text-slate-600";
+
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbz8hmMqQ2a0xWtv4vHDtNXLMoAPc12lDhEQJtjZKuAquowtwp03ZzZiyk8J_SiKMmQ/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(data)
+      }
+    );
+
+    formMessage.textContent =
+      "Your registration request was sent. Please wait for confirmation from the organizers.";
+    formMessage.className = "mt-4 text-sm leading-6 text-green-700";
+  } catch (error) {
+    formMessage.textContent =
+      "Unable to send your registration. Please try again later.";
+    formMessage.className = "mt-4 text-sm leading-6 text-red-700";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Submit Registration";
+  }
+});
+
     });
     
 async function copyPaymentDetail(value) {
