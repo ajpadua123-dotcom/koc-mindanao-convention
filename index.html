@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1b36">
+  <meta name="description" content="24th Mindanao State Convention of the Knights of Columbus, April 9–10, 2027, in Zamboanga City.">
+  <title>24th Mindanao State Convention | Knights of Columbus</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#0b1b36",
+            navyLight: "#14294a",
+            gold: "#c9a44c",
+            cream: "#f8f5ed"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    .hero-overlay {
+      background: linear-gradient(90deg, rgba(7,20,42,.96), rgba(7,20,42,.76));
+    }
+    .gold-border { border-color: rgba(201,164,76,.55); }
+  </style>
+</head>
+
+<body class="bg-cream text-slate-800 antialiased">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-navy text-white">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#home" class="flex items-center gap-3">
+        <img
+  src="images/KOC_Logo.jpg"
+  alt="Knights of Columbus 24th Mindanao State Convention Logo"
+  class="h-16 w-16 rounded-full object-contain bg-white p-0.5"
+/>
+        <div>
+          <p class="text-sm font-bold tracking-wide">KNIGHTS OF COLUMBUS</p>
+          <p class="text-xs text-slate-300">24th Mindanao State Convention</p>
+        </div>
+      </a>
+
+      <button id="menuButton" class="rounded border border-white/30 px-3 py-2 md:hidden"
+        aria-expanded="false" aria-controls="mobileMenu">
+        Menu
+      </button>
+
+      <div class="hidden items-center gap-7 text-sm md:flex">
+        <a class="hover:text-gold" href="#about">About</a>
+        <a class="hover:text-gold" href="#fees">Registration Fees</a>
+        <a class="rounded bg-gold px-5 py-3 font-bold text-navy hover:bg-yellow-300"
+          href="#register">Register Now</a>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden space-y-3 px-5 pb-5 md:hidden">
+      <a class="block py-2" href="#about">About the Convention</a>
+      <a class="block py-2" href="#fees">Registration Fees</a>
+      <a class="block py-2" href="#register">Register Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section
+      id="home"
+      class="relative flex min-h-[650px] items-center justify-center overflow-hidden bg-navy text-white"
+      style="background: url('images/zamboanga-attractions.png') center center / cover no-repeat;"
+    >
+      <!-- Navy overlays -->
+      <div class="absolute inset-0 z-0 bg-navy/45"></div>
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-navy/40 to-navy/80"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="relative z-10 flex w-full max-w-2xl flex-col items-center justify-center rounded-2xl border border-gold/30 bg-navy/80 px-5 py-10 text-center shadow-2xl backdrop-blur-sm md:px-14 md:py-16"
+      >
+        <h1 class="mb-4 text-3xl font-extrabold tracking-tight text-gold drop-shadow md:text-5xl">
+          24th Mindanao State Convention
+        </h1>
+        <p class="mb-1 text-lg font-bold uppercase tracking-wide text-gold drop-shadow md:text-2xl">
+          In The One, We Are One
+        </p>
+        <p class="mb-6 text-base font-medium text-white drop-shadow md:text-lg">
+          United in Faith, Mission and Service
+        </p>
+        <div class="mb-7 flex flex-col items-center gap-2">
+          <p class="text-md font-semibold text-white md:text-lg">
+            <span class="inline-block rounded-full bg-gradient-to-r from-gold/80 to-gold/60 px-4 py-1 shadow-md text-navy font-extrabold">
+              April 9–10, 2027
+            </span>
+          </p>
+          <p class="mt-1 text-sm text-slate-200 md:text-base">
+            Astoria Royce Convention Hall, Zamboanga City, Philippines
+          </p>
+        </div>
+        <a
+          href="#registration-info"
+          class="inline-block rounded-lg bg-gold px-8 py-4 font-bold text-lg text-navy shadow-lg transition hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
+        >
+          View Registration Info
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="bg-cream px-5 pt-10 pb-8 lg:px-8 lg:pt-12 lg:pb-10">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-xs font-bold uppercase tracking-[.18em] text-gold mb-2">About the Convention</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-5">United in Faith, Mission and Service</h2>
+        <p class="mb-8 text-base md:text-lg leading-7 text-slate-700">
+          Join fellow Knights of Columbus for the 24th Mindanao State Convention in Zamboanga City.<br class="hidden md:inline"> Gather in fellowship and take part in this convention under the theme, <span class="font-medium text-navy">"In The One, We Are One."</span>
+        </p>
+        <div class="mx-auto max-w-xl">
+          <div class="rounded-2xl border border-gold/40 bg-navy/95 px-6 py-7 md:py-8 shadow-lg flex flex-col items-center">
+            <span class="block text-gold uppercase text-xs tracking-widest font-semibold mb-1">Convention Theme</span>
+            <h3 class="text-xl md:text-2xl font-bold text-gold drop-shadow mb-0 leading-snug">
+              “In The One, We Are One.”
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="discover-zamboanga" class="bg-cream pt-8 pb-16 md:pt-10 md:pb-20">
+      <div class="mx-auto max-w-5xl px-5 flex flex-col lg:flex-row items-center gap-10">
+        <div class="w-full lg:w-1/2">
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-gold mb-2">WELCOME TO ZAMBOANGA</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-5">Discover the Beauty of Zamboanga</h2>
+          <p class="text-base md:text-lg leading-7 text-slate-700 mb-7">
+            Explore the scenic coastlines, colorful vintas, historic landmarks, and rich local culture of the City of Zamboanga.
+          </p>
+        </div>
+        <div class="w-full lg:w-1/2 flex justify-center">
+          <img
+            src="images/zamboanga-attractions.png"
+            alt="A collage of Zamboanga tourist attractions"
+            class="rounded-2xl border border-gold/30 shadow-lg max-w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Registration Fees and Inclusions -->
+    <section id="fees" class="bg-cream pt-10 pb-16 md:pt-12 md:pb-20">
+      <div class="mx-auto max-w-4xl px-5 lg:px-8">
+        <header class="text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy">Registration Fees and Inclusions</h2>
+          <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-gold"></div>
+          <p class="mt-6 text-base leading-7 text-slate-700 md:text-lg">
+            Join us for the 24th Mindanao State Convention. Choose your registration category and review the convention inclusions and official payment details below.
+          </p>
+        </header>
+
+        <!-- Fee Cards -->
+        <div class="mt-10 grid gap-5 sm:grid-cols-3">
+          <div class="flex flex-col rounded-2xl border border-gold/40 bg-white shadow-lg p-6 items-center">
+            <span class="block text-gold font-semibold uppercase tracking-widest text-xs mb-2">Early Bird</span>
+            <span class="text-3xl font-extrabold text-navy mb-1">₱3,500</span>
+            <span class="text-slate-500 text-xs text-center">Registration deadline:<br>To Be Announced</span>
+          </div>
+          <div class="flex flex-col rounded-2xl border border-gold/40 bg-white shadow-lg p-6 items-center">
+            <span class="block text-gold font-semibold uppercase tracking-widest text-xs mb-2">Regular Rate</span>
+            <span class="text-3xl font-extrabold text-navy mb-1">₱4,000</span>
+            <span class="text-slate-500 text-xs text-center">Registration dates:<br>To Be Announced</span>
+          </div>
+          <div class="flex flex-col rounded-2xl border border-gold/40 bg-white shadow-lg p-6 items-center">
+            <span class="block text-gold font-semibold uppercase tracking-widest text-xs mb-2">Late Registration</span>
+            <span class="text-3xl font-extrabold text-navy mb-1">₱4,500</span>
+            <span class="text-slate-500 text-xs text-center">Dates:<br>To Be Announced</span>
+          </div>
+        </div>
+
+        <!-- Convention Details Cards -->
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+
+          <!-- Convention Inclusions -->
+          <section class="rounded-2xl border border-gold/30 bg-navy/95 shadow-lg p-6 flex-1">
+            <h3 class="text-gold text-lg font-bold mb-4">Convention Inclusions</h3>
+            <ul class="space-y-3 text-white text-base">
+              <li class="flex items-center gap-2"><span class="font-semibold text-gold">•</span>Convention Access</li>
+              <li class="flex items-center gap-2"><span class="font-semibold text-gold">•</span>Meals</li>
+              <li class="flex items-center gap-2"><span class="font-semibold text-gold">•</span>Convention Souvenir Kit</li>
+              <li class="flex items-center gap-2"><span class="font-semibold text-gold">•</span>Certificate of Attendance</li>
+              <li class="flex items-center gap-2"><span class="font-semibold text-gold">•</span>Event ID</li>
+            </ul>
+          </section>
+
+          <!-- Payment Instructions -->
+          <section class="rounded-2xl border border-gold/30 bg-white shadow-lg p-6 flex-1">
+            <h3 class="text-navy text-lg font-bold mb-4">Payment Instructions</h3>
+            <div class="mb-5">
+              <span class="block font-semibold text-navy mb-2">BDO Bank Transfer</span>
+              <div class="text-slate-700 text-sm leading-6 pl-1">
+                Account Name: <span class="font-medium text-navy">Conrado S Canaynay</span><br>
+                
+Account Number:
+<span class="font-medium text-navy" id="bdoAccount">007150447276</span>
+<button type="button" onclick="copyPaymentDetail('007150447276')"
+  class="ml-2 rounded bg-gold px-2 py-1 text-xs font-semibold text-navy">
+  Copy
+</button><br>
+
+              </div>
+            </div>
+            <div>
+              <span class="block font-semibold text-navy mb-2">GCash</span>
+              <div class="text-slate-700 text-sm leading-6 pl-1">
+                Account Name: <span class="font-medium text-navy">Rogelio Tadura</span><br>
+                
+Mobile Number:
+<span class="font-medium text-navy">0918-210-4538</span>
+<button type="button"
+  onclick="copyPaymentDetail('09182104538')"
+  class="ml-2 rounded bg-gold px-2 py-1 text-xs font-semibold text-navy">
+  Copy
+</button>
+
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Contact Section -->
+        
+       
+
+<div class="flex-1 flex flex-col justify-center gap-4">
+  <div class="text-slate-600 text-sm leading-6 bg-gold/10 rounded-md p-4 border border-gold/10">
+    <p class="font-semibold text-navy">
+      Please verify payment details with the convention organizers before transferring funds.
+    </p>
+    <p class="mt-2 font-semibold text-navy">
+      Registration deadlines will be announced officially.
+    </p>
+  </div>
+            <a
+            href="#register"
+              class="mt-6 inline-block rounded-lg bg-gold px-8 py-4 font-bold text-lg text-navy shadow-lg transition hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 text-center"
+            >
+              Proceed to Registration
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+   <section id="register" class="bg-cream py-16 md:py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.2em] text-amber-700">Take Your Place</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy md:text-4xl">Convention Registration</h2>
+          <p class="mt-5 leading-7 text-slate-600">
+            Complete the registration details in the form. The form is currently a design preview;
+            submissions and receipt uploads will be enabled after the secure registration service is connected.
+          </p>
+
+          <div class="mt-8 rounded-xl bg-navy p-6 text-white">
+            
+<p class="font-bold text-gold">Before You Register</p>
+<ul class="mt-4 space-y-3 text-sm leading-6 text-slate-200">
+  <li>1. Choose your registration category and confirm the applicable fee.</li>
+  <li>2. Pay using the official BDO or GCash details listed on this page.</li>
+  <li>3. Complete the registration form using your correct information.</li>
+  <li>4. Upload your proof of payment with your registration.</li>
+  <li>5. Wait for confirmation from the convention organizers.</li>
+</ul>
+
+          </div>
+        </div>
+
+        <form id="registrationForm" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg md:p-9">
+          <div class="mb-7 border-b border-slate-200 pb-5">
+            <h3 class="text-2xl font-bold text-navy">Registrant Information</h3>
+            <p class="mt-2 text-sm text-slate-500">Fields marked * are required.</p>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="text-sm font-semibold">First Name *
+              <input name="firstName" required autocomplete="given-name"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold">Last Name *
+              <input name="lastName" required autocomplete="family-name"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold">Middle Initial (Optional)
+              <input name="middleName" autocomplete="additional-name"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold">Nickname
+              <input name="nickname"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold">Region *
+              <input name="region" required
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold">Council Number *
+              <input name="councilNumber" required
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold">Email Address *
+              <input name="email" type="email" required autocomplete="email"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold">Contact Number *
+              <input name="contactNumber" type="tel" required autocomplete="tel"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+            </label>
+
+            <label class="text-sm font-semibold sm:col-span-2">Registration Category *
+              <select id="registrationCategory" name="category" required
+                class="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 font-normal outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100">
+                
+<option value="">Select a category</option>
+<option value="Early Bird">Early Bird — ₱3,500</option>
+<option value="Regular">Regular Rate — ₱4,000</option>
+<option value="Late">Late Registration — ₱4,500</option>
+
+              </select>
+            </label>
+
+            <label class="text-sm font-semibold sm:col-span-2">Proof of Payment
+              <input name="proofOfPayment" type="file" accept=".jpg,.jpeg,.png,.pdf"
+                class="mt-2 block w-full rounded-lg border border-slate-300 px-4 py-3 text-sm font-normal">
+              <span class="mt-2 block text-xs font-normal leading-5 text-slate-500">
+                Upload is not active yet. Do not submit actual receipts until the secure upload service is configured.
+              </span>
+            </label>
+          </div>
+
+          <button type="submit"
+            class="mt-7 w-full rounded-lg bg-navy px-6 py-4 font-bold text-white transition hover:bg-navyLight">
+            Preview Registration
+          </button>
+          <p id="formMessage" role="status" class="mt-4 text-sm leading-6 text-slate-600"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy px-6 py-10 text-slate-200 lg:px-0">
+    <div class="max-w-2xl mx-auto flex flex-col items-center text-center space-y-5">
+      <p class="text-2xl font-extrabold text-white tracking-wide">
+        Knights of Columbus
+      </p>
+      <p class="text-lg font-semibold text-amber-400">
+        24th Mindanao State Convention
+      </p>
+      <p class="italic text-base text-slate-100 mt-2">
+        Theme: <span class="text-amber-300">“In The One, We Are One”</span>
+      </p>
+      <p class="text-base text-amber-200">
+        “United in Faith, Mission and Service”
+      </p>
+      <div class="w-full my-3 border-t border-amber-200 opacity-30"></div>
+      <p class="text-sm text-white font-medium">
+        <span class="inline-block mr-2">
+          <svg class="inline-block mr-1 w-4 h-4 text-amber-400 -mt-1" fill="currentColor" viewBox="0 0 20 20"><path d="M6 2a4 4 0 0 1 8 0c0 1.355-.702 2.492-1.753 3.143C15.417 6.475 18 9.232 18 12.54c0 3.454-2.798 5.46-8 5.46s-8-2.006-8-5.46c0-3.308 2.583-6.065 5.753-7.397A3.982 3.982 0 0 1 6 2zm8 10.54c0-2.138-1.658-4.03-4-4.525-2.342.495-4 2.387-4 4.525 0 1.862 1.493 2.879 4 2.879s4-1.017 4-2.879z"/></svg>
+        </span>
+        April 9–10, 2027 &middot; Astoria Royce Convention Hall, Zamboanga City, Philippines
+      </p>
+      <div class="flex flex-col gap-1 mt-5 text-base text-slate-200">
+        <div>
+          <span class="font-semibold text-amber-300">Contact Email:</span>
+          <a href="mailto:kofc24thmincon@gmail.com" class="underline hover:text-amber-400 focus:text-amber-400 transition-colors">
+            kofc24thmincon@gmail.com
+          </a>
+        </div>
+        <div>
+          <span class="font-semibold text-amber-300">Contact Person:</span>
+          Rogelio Tadura, Mindanao State Deputy
+        </div>
+        <div>
+          <span class="font-semibold text-amber-300">Contact Number:</span>
+          <a href="tel:09182104538" class="underline hover:text-amber-400 focus:text-amber-400 transition-colors">
+            0918-210-4538
+          </a>
+        </div>
+      </div>
+      <p class="mt-7 text-xs text-slate-400 font-normal leading-5 px-2">
+        Registration deadlines and official event updates will be announced by the convention organizers.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const categorySelect = document.getElementById("registrationCategory");
+    const form = document.getElementById("registrationForm");
+    const formMessage = document.getElementById("formMessage");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    document.querySelectorAll("[data-category]").forEach((link) => {
+      link.addEventListener("click", () => {
+        categorySelect.value = link.dataset.category;
+      });
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formMessage.textContent =
+        "Preview only: your information has NOT been sent or saved. Secure registration and receipt upload will be connected in a later step.";
+      formMessage.className = "mt-4 text-sm leading-6 text-amber-800";
+    });
+    
+async function copyPaymentDetail(value) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+    } else {
+      const input = document.createElement("textarea");
+      input.value = value;
+      input.style.position = "fixed";
+      input.style.left = "-9999px";
+      document.body.appendChild(input);
+      input.select();
+
+      const copied = document.execCommand("copy");
+      input.remove();
+
+      if (!copied) throw new Error("Copy failed");
+    }
+
+    alert("Copied successfully: " + value);
+  } catch (error) {
+    alert("Please copy manually: " + value);
+  }
+}
+
+  </script>
+</body>
+</html>
