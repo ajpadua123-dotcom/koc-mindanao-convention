@@ -458,6 +458,7 @@ form.addEventListener("submit", async (event) => {
    formMessage.textContent =
   "Your registration request has been submitted. Please wait for the organizers to confirm your registration. If you do not receive confirmation, please contact the convention organizers.";
 formMessage.className = "mt-4 text-sm leading-6 text-amber-800";
+    form.reset();
   } catch (error) {
     formMessage.textContent =
       "Unable to send your registration. Please try again later.";
