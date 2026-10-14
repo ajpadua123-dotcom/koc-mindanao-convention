@@ -426,28 +426,60 @@ Mobile Number:
     });
 
     
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const submitButton = form.querySelector('button[type="submit"]');
   const formMessage = document.getElementById("formMessage");
+  const fileInput = form.querySelector('input[name="proofOfPayment"]');
+  const file = fileInput?.files?.[0];
 
-  const data = Object.fromEntries(new FormData(form).entries());
+  if (!file) {
+    formMessage.textContent = "Please attach your proof of payment.";
+    formMessage.className = "mt-4 text-sm leading-6 text-red-700";
+    return;
+  }
 
-  // File uploads are not supported by this endpoint yet.
-  delete data.proofOfPayment;
+  const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+
+  if (!allowedTypes.includes(file.type)) {
+    formMessage.textContent = "Please upload a JPG, PNG, or PDF receipt.";
+    formMessage.className = "mt-4 text-sm leading-6 text-red-700";
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    formMessage.textContent = "Please choose a receipt smaller than 5 MB.";
+    formMessage.className = "mt-4 text-sm leading-6 text-red-700";
+    return;
+  }
 
   submitButton.disabled = true;
   submitButton.textContent = "Submitting...";
-  formMessage.textContent = "Sending your registration...";
+  formMessage.textContent = "Sending registration and receipt...";
   formMessage.className = "mt-4 text-sm leading-6 text-slate-600";
 
   try {
-    await fetch(
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(new Error("Unable to read receipt file."));
+      reader.readAsDataURL(file);
+    });
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    data.proofOfPayment = {
+      name: file.name,
+      mimeType: file.type,
+      base64: base64
+    };
+
+    const response = await fetch(
       "https://script.google.com/macros/s/AKfycbz8hmMqQ2a0xWtv4vHDtNXLMoAPc12lDhEQJtjZKuAquowtwp03ZzZiyk8J_SiKMmQ/exec",
       {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "text/plain;charset=utf-8"
         },
@@ -455,20 +487,29 @@ form.addEventListener("submit", async (event) => {
       }
     );
 
-   formMessage.textContent =
-  "Your registration request has been submitted. Please wait for the organizers to confirm your registration. If you do not receive confirmation, please contact the convention organizers.";
-formMessage.className = "mt-4 text-sm leading-6 text-amber-800";
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || "Registration could not be saved.");
+    }
+
+    formMessage.textContent =
+      "Registration and receipt submitted successfully. Please wait for confirmation from the organizers.";
+    formMessage.className = "mt-4 text-sm leading-6 text-green-700";
     form.reset();
+
   } catch (error) {
     formMessage.textContent =
-      "Unable to send your registration. Please try again later.";
+      "We could not confirm the submission. Please check the form and try again. If you are unsure whether it was saved, contact the organizers before submitting again.";
     formMessage.className = "mt-4 text-sm leading-6 text-red-700";
+    console.error(error);
+
   } finally {
     submitButton.disabled = false;
     submitButton.textContent = "Submit Registration";
   }
+});
 
-    });
     
 async function copyPaymentDetail(value) {
   try {
